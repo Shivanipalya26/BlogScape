@@ -1,12 +1,12 @@
-import { H1 } from "./styles/typography"
+import HomePage from "./pages/home";
+import RootStructure from "./styles/template/RootStructure";
 
 function App() {
-
   return (
-    <>
-      <H1 className="text-blue-400">BlogScape</H1>
-    </>
-  )
+    <RootStructure>
+      <HomePage />
+    </RootStructure>
+  );
 }
 
-export default App
+export default App;
