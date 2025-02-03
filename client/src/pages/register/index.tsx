@@ -1,12 +1,12 @@
 import type { FormProps } from "antd";
-import { Button, Card, Form, Input } from "antd";
-import { H3 } from "../../styles/typography";
+import { Form } from "antd";
+import Layout from "../../styles/template/Layout";
+import { Button } from "../../styles/button";
+import { FormFieldInput, FormFieldPassword } from "../../styles/form";
 
 type FieldType = {
-  name?: string;
   email?: string;
   password?: string;
-  confirmPassword?: string;
 };
 
 const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
@@ -18,68 +18,105 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 };
 
 const Register: React.FC = () => (
-  <div className="flex flex-col justify-center items-center max-w-screen h-[62vh] bg-gray-100 pt-8  ">
-    <Card className="w-full max-w-md p-6 border-8 shadow-md"
-        style={{ backgroundColor: "transparent" }}
-    >
-    <H3 className="p-4 text-teal-600 flex justify-center font-medium">REGISTER</H3>
-    <Form
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      <Form.Item<FieldType>
-        label="Name"
-        name="name"
-        rules={[{ required: true, message: "Please input your username!" }]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item<FieldType>
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: "Please input your email!" }]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item<FieldType>
-        label="Password"
-        name="password"
-        rules={[{ required: true, message: "Please input your password!" }]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item<FieldType>
-        label="Confirm Password"
-        name="confirmPassword"
-        rules={[
-          { required: true, message: "Please input your confirm password!" },
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item label={null}>
-        <div className="flex justify-start">
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{ backgroundColor: "#14b8a6", borderColor: "#14b8a6" }}
+  <section>
+    <Layout>
+      <main className="w-full flex flex-col items-center justify-center px-4">
+        <div className="max-w-sm w-full text-gray-600">
+          <div className="text-center">
+            <div className="mt-5 space-y-2">
+              <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
+                Register Account
+              </h3>
+              <p className="">
+                Already have an account?{" "}
+                <a
+                  href="javascript:void(0)"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                >
+                  Log in
+                </a>
+              </p>
+            </div>
+          </div>
+          <Form
+            name="Register"
+            layout="vertical"
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
           >
-            Register
-          </Button>
+            <Form.Item
+              name="name"
+              rules={[{ required: true, message: "Please input your name!" }]}
+              label="Name"
+            >
+              <FormFieldInput placeholder="Name" />
+            </Form.Item>
+            <Form.Item
+              name="email"
+              rules={[
+                { required: true, message: "Please input your email!" },
+                {
+                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: "Please enter a valid email!",
+                },
+              ]}
+              label="Email"
+            >
+              <FormFieldInput placeholder="Email" />
+            </Form.Item>
+
+            <Form.Item
+              name="password"
+              rules={[
+                { required: true, message: "Please input your password!" },
+                {
+                  min: 8,
+                  message: "Password must be at least 8 characters!",
+                },
+                {
+                  pattern:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&_]{8,}$/,
+                  message:
+                    "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character!",
+                },
+              ]}
+              label="Password"
+            >
+              <FormFieldPassword placeholder="Password" />
+            </Form.Item>
+            <Form.Item
+              name="confirm"
+              label="Confirm Password"
+              dependencies={["password"]}
+              rules={[
+                {
+                  required: true,
+                  message: "Please confirm your password!",
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error(
+                        "The new password that you entered do not match!"
+                      )
+                    );
+                  },
+                }),
+              ]}
+            >
+              <FormFieldPassword placeholder="confirm password" />
+            </Form.Item>
+            <Form.Item>
+              <Button htmlFor="submit">Log in</Button>
+            </Form.Item>
+          </Form>
         </div>
-      </Form.Item>
-    </Form>
-    </Card>
-  </div>
+      </main>
+    </Layout>
+  </section>
 );
 
 export default Register;

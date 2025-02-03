@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 
 const RootStructure: FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div>
+    <div className="flex flex-col justify-between min-h-screen">
       <Navbar />
       <div>{children}</div>
       <Footer />
