@@ -1,5 +1,6 @@
 import Layout from "../../styles/template/Layout";
 import blogImg from "../../styles/assets/blogImg.jpg";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -20,12 +21,12 @@ const HomePage = () => {
               <button className="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg shadow-md hover:shadow-2xl cursor-pointer transition duration-300">
                 Start Exploring
               </button>
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="text-teal-600 font-semibold hover:underline"
               >
                 Learn More About Us
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -95,7 +95,7 @@ export const BlockQuote: FC<{
     className?: string;
 }> = ({children, className="", ...props}) => {
     return (
-        <blockquote className={`border-l-4 pl-4 italic text-gray-500 ${className}`}
+        <blockquote className={`border-l-4 pl-4 italic text-gray-400 ${className}`}
         {...props}
         >
             { children }
