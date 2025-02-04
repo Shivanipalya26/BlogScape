@@ -1,15 +1,21 @@
 import Layout from "../../styles/template/Layout";
 import blogImg from "../../styles/assets/blogImg.jpg";
 import { Link } from "react-router-dom";
+import FaqSection from "../../components/Faqs";
 
 const HomePage = () => {
   return (
-    <section>
+    <section className="bg-[#ede8e8]">
       <Layout>
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="w-full md:w-2/3 px-6 md:px-18 pt-16 md:pt-26 pb-16 md:pb-28">
+        <div className="flex flex-col md:flex-row justify-between items-center ">
+          <div className="w-full md:w-2/3 px-6 md:px-18 pt-16 md:pt-26 pb-16 md:pb-28 ">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Where Curiosity Meets Insight – Your Ultimate Knowledge Hub
+              Where
+              <span className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] ">
+                {" "}
+                Curiosity{" "}
+              </span>
+              Meets Insight – Your Ultimate Knowledge Hub
             </h1>
             <p className="text-lg md:text-1xl font-mono text-gray-500 leading-relaxed mb-6 pt-2">
               Stay informed and inspired with articles that cater to your
@@ -37,6 +43,10 @@ const HomePage = () => {
               className="w-full max-w-[80vh] h-auto p-4 md:p-10 pr-0  "
             />
           </div>
+        </div>
+
+        <div>
+          <FaqSection />
         </div>
       </Layout>
     </section>

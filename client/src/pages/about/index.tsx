@@ -29,7 +29,7 @@ const AboutPage: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-gray-100 text-gray-800 py-16 px-6 md:px-20 transition-colors duration-300"
+      className="bg-[#ede8e8] text-gray-800 py-16 px-6 md:px-20 transition-colors duration-300"
     >
       <Layout>
         <div className="max-w-5xl mx-auto ">
