@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../../styles/template/Layout";
 import { Link } from "react-router-dom";
+import Dropdown from "../../styles/dropdown";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,6 +9,14 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const categories = [
+    { title: "Technology", path: "/categories/technology" },
+    { title: "Health & Wellness", path: "/categories/health" },
+    { title: "Finance", path: "/categories/finance" },
+    { title: "Travel", path: "/categories/travel" },
+    { title: "Education", path: "/categories/education" },
+  ];
 
   return (
     <header className="bg-gray-100">
@@ -43,13 +52,19 @@ const Navbar = () => {
                   </Link>
                 </li>
 
+
+                <li>
+                  <Dropdown label="Categories" items={categories} />
+                </li>
+                
+
                 <li>
                   <a
                     className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
-                    Careers{" "}
+                    Blogs{" "}
                   </a>
                 </li>
 
@@ -59,7 +74,7 @@ const Navbar = () => {
                     href="#"
                   >
                     {" "}
-                    History{" "}
+                    Membership{" "}
                   </a>
                 </li>
 
@@ -69,27 +84,7 @@ const Navbar = () => {
                     href="#"
                   >
                     {" "}
-                    Services{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    Projects{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    Blog{" "}
+                    Write{" "}
                   </a>
                 </li>
               </ul>

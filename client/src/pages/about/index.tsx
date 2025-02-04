@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../styles/template/Layout";
 import { BlockQuote } from "../../styles/typography";
 import Card from "../../components/Card";
+import { LinkButton } from "../../styles/button";
 
 const cardData = [
   {
@@ -66,12 +67,9 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <a
-              href="#explore"
-              className="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg shadow-md hover:shadow-xl transition duration-300"
-            >
-              Explore More
-            </a>
+            <LinkButton to='/' className="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+              Explore more
+            </LinkButton>
           </div>
         </div>
       </Layout>
