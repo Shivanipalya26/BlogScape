@@ -1,27 +1,27 @@
-import React from "react";
-import Layout from "../../styles/template/Layout";
-import { BlockQuote } from "../../styles/typography";
-import Card from "../../components/Card";
-import { LinkButton } from "../../styles/button";
+import React from 'react';
+import Layout from '../../styles/template/Layout';
+import { BlockQuote } from '../../styles/typography';
+import Card from '../../components/Card';
+import { LinkButton } from '../../styles/button';
 
 const cardData = [
   {
-    title: "Informative Articles",
-    icon: "📖",
+    title: 'Informative Articles',
+    icon: '📖',
     description:
-      "Read high-quality, well-researched articles written by experts and passionate writers.",
+      'Read high-quality, well-researched articles written by experts and passionate writers.',
   },
   {
-    title: "Latest Trends",
-    icon: "🌍",
+    title: 'Latest Trends',
+    icon: '🌍',
     description:
-      "Stay ahead of the curve with insights into emerging trends across industries.",
+      'Stay ahead of the curve with insights into emerging trends across industries.',
   },
   {
-    title: "Share Your Voice",
-    icon: "✎",
+    title: 'Share Your Voice',
+    icon: '✎',
     description:
-      "Become a contributor and share your knowledge with a wide audience.",
+      'Become a contributor and share your knowledge with a wide audience.',
   },
 ];
 
@@ -67,7 +67,10 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <LinkButton to='/' className="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+            <LinkButton
+              to="/"
+              className="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            >
               Explore more
             </LinkButton>
           </div>

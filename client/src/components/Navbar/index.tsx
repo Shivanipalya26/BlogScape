@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Layout from "../../styles/template/Layout";
-import { Link } from "react-router-dom";
-import Dropdown from "../../styles/dropdown";
+import { useState } from 'react';
+import Layout from '../../styles/template/Layout';
+import { Link } from 'react-router-dom';
+import Dropdown from '../../styles/dropdown';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,11 +11,11 @@ const Navbar = () => {
   };
 
   const categories = [
-    { title: "Technology", path: "/categories/technology" },
-    { title: "Health & Wellness", path: "/categories/health" },
-    { title: "Finance", path: "/categories/finance" },
-    { title: "Travel", path: "/categories/travel" },
-    { title: "Education", path: "/categories/education" },
+    { title: 'Technology', path: '/categories/technology' },
+    { title: 'Health & Wellness', path: '/categories/health' },
+    { title: 'Finance', path: '/categories/finance' },
+    { title: 'Travel', path: '/categories/travel' },
+    { title: 'Education', path: '/categories/education' },
   ];
 
   return (
@@ -47,24 +47,22 @@ const Navbar = () => {
                     className="text-gray-500 transition hover:text-gray-500/75"
                     to="/about"
                   >
-                    {" "}
-                    About{" "}
+                    {' '}
+                    About{' '}
                   </Link>
                 </li>
-
 
                 <li>
                   <Dropdown label="Categories" items={categories} />
                 </li>
-                
 
                 <li>
                   <a
                     className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
-                    {" "}
-                    Blogs{" "}
+                    {' '}
+                    Blogs{' '}
                   </a>
                 </li>
 
@@ -73,8 +71,8 @@ const Navbar = () => {
                     className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
-                    {" "}
-                    Membership{" "}
+                    {' '}
+                    Membership{' '}
                   </a>
                 </li>
 
@@ -83,8 +81,8 @@ const Navbar = () => {
                     className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
-                    {" "}
-                    Write{" "}
+                    {' '}
+                    Write{' '}
                   </a>
                 </li>
               </ul>
@@ -142,8 +140,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  About{" "}
+                  {' '}
+                  About{' '}
                 </a>
               </li>
 
@@ -152,8 +150,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  Careers{" "}
+                  {' '}
+                  Careers{' '}
                 </a>
               </li>
 
@@ -162,8 +160,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  History{" "}
+                  {' '}
+                  History{' '}
                 </a>
               </li>
 
@@ -172,8 +170,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  Services{" "}
+                  {' '}
+                  Services{' '}
                 </a>
               </li>
 
@@ -182,8 +180,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  Projects{" "}
+                  {' '}
+                  Projects{' '}
                 </a>
               </li>
 
@@ -192,8 +190,8 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {" "}
-                  Blog{" "}
+                  {' '}
+                  Blog{' '}
                 </a>
               </li>
             </ul>

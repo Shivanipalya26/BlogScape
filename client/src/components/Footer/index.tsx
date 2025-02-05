@@ -1,4 +1,4 @@
-import Layout from "../../styles/template/Layout";
+import Layout from '../../styles/template/Layout';
 
 const Footer = () => {
   return (
@@ -91,8 +91,8 @@ const Footer = () => {
                   className="text-gray-700 transition hover:text-gray-700/75"
                   href="#"
                 >
-                  {" "}
-                  About{" "}
+                  {' '}
+                  About{' '}
                 </a>
               </li>
 
@@ -101,8 +101,8 @@ const Footer = () => {
                   className="text-gray-700 transition hover:text-gray-700/75"
                   href="#"
                 >
-                  {" "}
-                  Services{" "}
+                  {' '}
+                  Services{' '}
                 </a>
               </li>
 
@@ -111,8 +111,8 @@ const Footer = () => {
                   className="text-gray-700 transition hover:text-gray-700/75"
                   href="#"
                 >
-                  {" "}
-                  Projects{" "}
+                  {' '}
+                  Projects{' '}
                 </a>
               </li>
 
@@ -121,8 +121,8 @@ const Footer = () => {
                   className="text-gray-700 transition hover:text-gray-700/75"
                   href="#"
                 >
-                  {" "}
-                  Blog{" "}
+                  {' '}
+                  Blog{' '}
                 </a>
               </li>
             </ul>

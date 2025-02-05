@@ -1,7 +1,7 @@
-import Layout from "../../styles/template/Layout";
-import blogImg from "../../styles/assets/blogImg.jpg";
-import { Link } from "react-router-dom";
-import FaqSection from "../../components/Faqs";
+import Layout from '../../styles/template/Layout';
+import blogImg from '../../styles/assets/blogImg.jpg';
+import { Link } from 'react-router-dom';
+import FaqSection from '../../components/Faqs';
 
 const HomePage = () => {
   return (
@@ -12,8 +12,8 @@ const HomePage = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
               Where
               <span className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] ">
-                {" "}
-                Curiosity{" "}
+                {' '}
+                Curiosity{' '}
               </span>
               Meets Insight – Your Ultimate Knowledge Hub
             </h1>

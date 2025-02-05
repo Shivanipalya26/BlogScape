@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 type DropdownItem = {
   title: string;
@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, items }) => {
           viewBox="0 0 20 20"
           fill="currentColor"
           className={`w-4 h-4 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : "rotate-0"
+            isOpen ? 'rotate-180' : 'rotate-0'
           }`}
         >
           <path

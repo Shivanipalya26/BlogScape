@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 type CardProps = {
   title?: string;
   icon?: string;
   description?: string;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 };
 
 const Card: React.FC<CardProps> = ({ title, icon, description, children }) => {

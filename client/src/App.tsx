@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/home";
-import RootStructure from "./styles/template/RootStructure";
-import Register from "./pages/register";
-import Login from "./pages/login";
-import AboutPage from "./pages/about";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home';
+import RootStructure from './styles/template/RootStructure';
+import Register from './pages/register';
+import Login from './pages/login';
+import AboutPage from './pages/about';
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
         </Routes>
       </RootStructure>
     </Router>
-    
   );
 }
 

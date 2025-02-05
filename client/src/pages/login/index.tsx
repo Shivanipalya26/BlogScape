@@ -1,20 +1,20 @@
-import type { FormProps } from "antd";
-import { Form } from "antd";
-import Layout from "../../styles/template/Layout";
-import { Button } from "../../styles/button";
-import { FormFieldInput, FormFieldPassword } from "../../styles/form";
+import type { FormProps } from 'antd';
+import { Form } from 'antd';
+import Layout from '../../styles/template/Layout';
+import { Button } from '../../styles/button';
+import { FormFieldInput, FormFieldPassword } from '../../styles/form';
 
 type FieldType = {
   email?: string;
   password?: string;
 };
 
-const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-  console.log("Success:", values);
+const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+  console.log('Success:', values);
 };
 
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("Failed:", errorInfo);
+const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+  console.log('Failed:', errorInfo);
 };
 
 const Login: React.FC = () => (
@@ -47,10 +47,10 @@ const Login: React.FC = () => (
             <Form.Item
               name="email"
               rules={[
-                { required: true, message: "Please input your email!" },
+                { required: true, message: 'Please input your email!' },
                 {
                   pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Please enter a valid email!",
+                  message: 'Please enter a valid email!',
                 },
               ]}
               label="Email"
@@ -61,13 +61,13 @@ const Login: React.FC = () => (
             <Form.Item
               name="password"
               rules={[
-                { required: true, message: "Please input your password!" },
-                { min: 8, message: "Password must be at least 8 characters!" },
+                { required: true, message: 'Please input your password!' },
+                { min: 8, message: 'Password must be at least 8 characters!' },
                 {
                   pattern:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                   message:
-                    "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character!",
+                    'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character!',
                 },
               ]}
               label="Password"
