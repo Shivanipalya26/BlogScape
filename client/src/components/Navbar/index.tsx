@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Layout from '../../styles/template/Layout';
 import { Link } from 'react-router-dom';
-import Dropdown from '../../styles/dropdown';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,11 +10,10 @@ const Navbar = () => {
   };
 
   const navigationList = [
-    { title: 'Technology', path: '/categories/technology' },
-    { title: 'Health & Wellness', path: '/categories/health' },
-    { title: 'Finance', path: '/categories/finance' },
-    { title: 'Travel', path: '/categories/travel' },
-    { title: 'Education', path: '/categories/education' },
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Blogs', path: '/blogs' },
+    { title: 'Write Blog', path: '/write-blog' },
   ];
 
   return (
@@ -102,14 +100,6 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <nav aria-label="Global" className="md:hidden">
             <ul className="flex flex-col items-center gap-6 text-sm">
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  About
-                </a>
-              </li>
               {navigationList.map((item) => (
                 <li key={item.title}>
                   <Link
@@ -120,14 +110,6 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  Blog
-                </a>
-              </li>
             </ul>
           </nav>
         )}
