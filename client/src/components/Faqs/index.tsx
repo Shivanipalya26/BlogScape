@@ -1,4 +1,5 @@
 import React, { FC, useRef, useState } from 'react';
+import { AddIcon } from '../../styles/icons';
 
 interface Faq {
   q: string;
@@ -51,20 +52,7 @@ const FaqsCard: React.FC<FaqsCardProps> = (props) => {
             />
           </svg>
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-gray-500 ml-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 4v16m8-8H4"
-            />
-          </svg>
+          <AddIcon />
         )}
       </h4>
       <div
