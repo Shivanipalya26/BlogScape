@@ -28,7 +28,7 @@ const Login: React.FC = () => (
                 Log in to your account
               </h3>
               <p className="">
-                Don't have an account?{" "}
+                Don't have an account?
                 <a
                   href="javascript:void(0)"
                   className="font-medium text-indigo-600 hover:text-indigo-500"
