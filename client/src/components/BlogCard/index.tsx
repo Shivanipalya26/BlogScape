@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as T from '../../styles/typography';
 
 type BlogCardProps = {
   id: number;
@@ -26,18 +27,18 @@ const BlogCard: React.FC<BlogCardProps> = ({
     <li className="px-4 py-5 duration-150 hover:border-white hover:rounded-xl hover:bg-gray-100">
       <Link to={path} className="space-y-3 flex justify-between items-center">
         <div className="flex-1">
-          <div className="flex items-center gap-x-3">
+          <div className="flex items-center">
             <div>
-              <span className="block text-sm text-indigo-600 font-medium">
-                {title}
-              </span>
-              <h3 className="text-base text-gray-800 font-semibold mt-1">
+              <T.H5>
+                <span className="block text-teal-600 font-medium">{title}</span>
+              </T.H5>
+              <T.H6 className="text-base text-gray-800 font-semibold mt-1">
                 {author}
-              </h3>
+              </T.H6>
             </div>
           </div>
 
-          <p className="text-gray-600 sm:text-sm pt-2">{excerpt}</p>
+          <T.P className="text-gray-600 sm:text-sm pt-2">{excerpt}</T.P>
 
           <div className="text-sm text-gray-600 flex items-center gap-6 mt-6 ">
             <span className="flex items-center gap-2">

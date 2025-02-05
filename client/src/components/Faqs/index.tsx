@@ -4,14 +4,24 @@ import * as T from '../../styles/typography';
 
 const faqs = [
   {
-    question: 'Lorem ipsum dolor sit amet consectetur adipisicing?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!',
+    question: 'What is this blog about?',
+    answer: 'This blog covers a wide range of topics, including technology, lifestyle, and personal development, providing valuable insights and engaging content.',
   },
   {
-    question: 'Lorem ipsum dolor sit amet consectetur adipisicing?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!',
+    question: 'How often is new content published?',
+    answer: 'We strive to publish new articles weekly, ensuring fresh and insightful content for our readers.',
+  },
+  {
+    question: 'Can I contribute to the blog?',
+    answer: "Yes! We welcome guest contributions. If you're interested, please visit our 'Write for Us' page for guidelines and submission details.",
+  },
+  {
+    question: 'How can I stay updated with new posts?',
+    answer: 'You can subscribe to our newsletter or follow us on social media to get notifications about our latest articles.',
+  },
+  {
+    question: 'How can I contact the blog team?',
+    answer: 'You can reach out to us through our contact page or email us directly for any inquiries or collaborations.',
   },
 ];
 
