@@ -10,7 +10,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const categories = [
+  const navigationList = [
     { title: 'Technology', path: '/categories/technology' },
     { title: 'Health & Wellness', path: '/categories/health' },
     { title: 'Finance', path: '/categories/finance' },
@@ -42,49 +42,16 @@ const Navbar = () => {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    to="/about"
-                  >
-                    {' '}
-                    About{' '}
-                  </Link>
-                </li>
-
-                <li>
-                  <Dropdown label="Categories" items={categories} />
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Blogs{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Membership{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Write{' '}
-                  </a>
-                </li>
+                {navigationList.map((item) => (
+                  <li key={item.title}>
+                    <Link
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                      to={item.path}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -100,7 +67,7 @@ const Navbar = () => {
 
               <div className="hidden sm:flex">
                 <Link
-                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 border-2 border-teal-600 hover:bg-teal-600 hover:text-white "
                   to="/register"
                 >
                   Register
@@ -140,58 +107,25 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {' '}
-                  About{' '}
+                  About
                 </a>
               </li>
-
+              {navigationList.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    className="text-gray-500 transition hover:text-gray-500/75"
+                    to={item.path}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <a
                   className="text-gray-500 transition hover:text-gray-500/75"
                   href="#"
                 >
-                  {' '}
-                  Careers{' '}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  {' '}
-                  History{' '}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  {' '}
-                  Services{' '}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  {' '}
-                  Projects{' '}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  {' '}
-                  Blog{' '}
+                  Blog
                 </a>
               </li>
             </ul>
