@@ -3,6 +3,7 @@ import { Form } from 'antd';
 import Layout from '../../styles/template/Layout';
 import { Button } from '../../styles/button';
 import { FormFieldInput, FormFieldPassword } from '../../styles/form';
+import PageLoadingAnimation from '../../styles/animation';
 
 type FieldType = {
   email?: string;
@@ -18,7 +19,7 @@ const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
 };
 
 const Register: React.FC = () => (
-  <section>
+  <PageLoadingAnimation>
     <Layout>
       <main className="w-full flex flex-col items-center justify-center px-4">
         <div className="max-w-sm w-full text-gray-600">
@@ -116,7 +117,7 @@ const Register: React.FC = () => (
         </div>
       </main>
     </Layout>
-  </section>
+  </PageLoadingAnimation>
 );
 
 export default Register;
