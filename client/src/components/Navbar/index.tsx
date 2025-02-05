@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../../styles/template/Layout";
 import { Link } from "react-router-dom";
+import Dropdown from "../../styles/dropdown";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,12 +10,20 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const categories = [
+    { title: "Technology", path: "/categories/technology" },
+    { title: "Health & Wellness", path: "/categories/health" },
+    { title: "Finance", path: "/categories/finance" },
+    { title: "Travel", path: "/categories/travel" },
+    { title: "Education", path: "/categories/education" },
+  ];
+
   return (
     <header className="bg-gray-100">
       <Layout>
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <Link className="block text-teal-600" to="/">
               <span className="sr-only">Home</span>
               <svg
                 className="h-8"
@@ -27,19 +36,35 @@ const Navbar = () => {
                   fill="currentColor"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a
+                  <Link
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
+                    to="/about"
                   >
                     {" "}
                     About{" "}
+                  </Link>
+                </li>
+
+
+                <li>
+                  <Dropdown label="Categories" items={categories} />
+                </li>
+                
+
+                <li>
+                  <a
+                    className="text-gray-500 transition hover:text-gray-500/75"
+                    href="#"
+                  >
+                    {" "}
+                    Blogs{" "}
                   </a>
                 </li>
 
@@ -49,7 +74,7 @@ const Navbar = () => {
                     href="#"
                   >
                     {" "}
-                    Careers{" "}
+                    Membership{" "}
                   </a>
                 </li>
 
@@ -59,37 +84,7 @@ const Navbar = () => {
                     href="#"
                   >
                     {" "}
-                    History{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    Services{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    Projects{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    Blog{" "}
+                    Write{" "}
                   </a>
                 </li>
               </ul>
