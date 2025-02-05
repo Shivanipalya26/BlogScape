@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../../styles/template/Layout';
 import { Link } from 'react-router-dom';
+import { LinkButton } from '../../styles/button';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,20 +57,12 @@ const Navbar = () => {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <Link
-                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
-                to="/login"
-              >
-                Login
-              </Link>
+              <LinkButton to="/login">Login</LinkButton>
 
               <div className="hidden sm:flex">
-                <Link
-                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 border-2 border-teal-600 hover:bg-teal-600 hover:text-white "
-                  to="/register"
-                >
+                <LinkButton to="/register" variant="secondary">
                   Register
-                </Link>
+                </LinkButton>
               </div>
             </div>
 

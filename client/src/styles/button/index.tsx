@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 type ButtonProps = {
   children?: React.ReactNode;
   htmlFor?: 'submit' | 'reset' | 'button';
+  variant?: 'primary' | 'secondary';
   onClick?: () => void;
+  rounded?: 'regular' | 'full';
 };
 
 type LinkButtonProps = {
@@ -14,17 +16,32 @@ type LinkButtonProps = {
   target?: '_blank' | '_self';
   onClick?: () => void;
   className?: string;
+  variant?: 'primary' | 'secondary';
+  rounded?: 'regular' | 'full';
+};
+
+const variantClasses = {
+  primary: 'bg-teal-500 hover:bg-teal-600 text-white transition duration-300',
+  secondary:
+    'border border-teal-500 hover:bg-teal-600 text-teal-500 hover:text-white  transition duration-300',
+};
+
+const roundedClasses = {
+  regular: 'rounded-md',
+  full: 'rounded-full',
 };
 
 export const Button: FC<ButtonProps> = ({
   children,
-  htmlFor,
+  variant = 'primary',
+  rounded = 'regular',
+  htmlFor = 'button',
   onClick,
   ...props
 }) => {
   return (
     <button
-      className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full"
+      className={`py-2 px-4 ${variantClasses[variant]} ${roundedClasses[rounded]}`}
       onClick={onClick}
       type={htmlFor}
       {...props}
@@ -39,7 +56,9 @@ export const LinkButton: FC<LinkButtonProps> = ({
   to,
   target = '_self',
   onClick,
+  variant = 'primary',
   className,
+  rounded = 'regular',
   ...props
 }) => {
   const isExternal = to?.startsWith('http') || to?.startsWith('www');
@@ -58,7 +77,7 @@ export const LinkButton: FC<LinkButtonProps> = ({
   ) : (
     <Link
       to={to}
-      className={`bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded ${className}`}
+      className={`py-2 px-4 ${variantClasses[variant]} ${roundedClasses[rounded]}`}
       onClick={onClick}
       {...props}
     >
