@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "prepare": "husky",
     "prettier": "prettier --write .",
-    "test": "prettier && lint && build"
+    "test": "npm run prettier && npm run lint && npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",
