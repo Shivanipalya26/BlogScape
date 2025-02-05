@@ -1,5 +1,5 @@
 import React, { FC, useRef, useState } from 'react';
-import { AddIcon } from '../../styles/icons';
+import { AddIcon, RemoveIcon } from '../../styles/icons';
 
 interface Faq {
   q: string;
@@ -36,24 +36,7 @@ const FaqsCard: React.FC<FaqsCardProps> = (props) => {
     >
       <h4 className="cursor-pointer pb-5 flex items-center justify-between text-lg text-gray-700 font-medium">
         {faqsList.q}
-        {state ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-gray-500 ml-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M20 12H4"
-            />
-          </svg>
-        ) : (
-          <AddIcon />
-        )}
+        {state ? <RemoveIcon /> : <AddIcon />}
       </h4>
       <div
         ref={answerElRef}
