@@ -6,7 +6,7 @@ export const H1: FC<{
 }> = ({ children, className = '', ...props }) => {
   return (
     <h1
-      className={`text-6xl sm:text-5xl md:text-6xl font-bold ${className}`}
+      className={`font-mont text-6xl sm:text-5xl md:text-6xl font-bold ${className}`}
       {...props}
     >
       {children}
@@ -19,7 +19,10 @@ export const H2: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <h2 className={`text-4xl sm:text-4xl md:text-5xl ${className}`} {...props}>
+    <h2
+      className={`font-mont text-4xl sm:text-4xl md:text-5xl ${className}`}
+      {...props}
+    >
       {children}
     </h2>
   );
@@ -30,7 +33,10 @@ export const H3: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <h3 className={`text-3xl sm:text-3xl md:text-4xl ${className}`} {...props}>
+    <h3
+      className={`font-mont text-3xl sm:text-3xl md:text-4xl ${className}`}
+      {...props}
+    >
       {children}
     </h3>
   );
@@ -41,7 +47,10 @@ export const H4: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <h4 className={`text-2xl sm:text-2xl md:text-3xl ${className}`} {...props}>
+    <h4
+      className={`font-mont text-2xl sm:text-2xl md:text-3xl ${className}`}
+      {...props}
+    >
       {children}
     </h4>
   );
@@ -52,7 +61,10 @@ export const H5: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <h5 className={`text-1xl sm:text-1xl md:text-2xl ${className}`} {...props}>
+    <h5
+      className={`font-mont text-1xl sm:text-1xl md:text-2xl ${className}`}
+      {...props}
+    >
       {children}
     </h5>
   );
@@ -63,7 +75,7 @@ export const H6: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <h6 className={`text-1xl ${className}`} {...props}>
+    <h6 className={`font-mont text-1xl ${className}`} {...props}>
       {children}
     </h6>
   );
@@ -74,7 +86,7 @@ export const P: FC<{
   className?: string;
 }> = ({ children, className = '', ...props }) => {
   return (
-    <p className={`text-base leading-relaxed ${className}`} {...props}>
+    <p className={`font-pop text-base leading-relaxed ${className}`} {...props}>
       {children}
     </p>
   );

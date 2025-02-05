@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Layout from '../../styles/template/Layout';
 import { Link } from 'react-router-dom';
 import { LinkButton } from '../../styles/button';
+import * as T from '../../styles/typography';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ const Navbar = () => {
                       className="text-gray-500 transition hover:text-gray-500/75"
                       to={item.path}
                     >
-                      {item.title}
+                      <T.P>{item.title}</T.P>
                     </Link>
                   </li>
                 ))}
@@ -99,7 +100,7 @@ const Navbar = () => {
                     className="text-gray-500 transition hover:text-gray-500/75"
                     to={item.path}
                   >
-                    {item.title}
+                    <T.P>{item.title}</T.P>
                   </Link>
                 </li>
               ))}

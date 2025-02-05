@@ -21,9 +21,10 @@ type LinkButtonProps = {
 };
 
 const variantClasses = {
-  primary: 'bg-teal-500 hover:bg-teal-600 text-white transition duration-300',
+  primary:
+    'font-pop bg-teal-500 hover:bg-teal-600 text-white transition duration-300',
   secondary:
-    'border border-teal-500 hover:bg-teal-600 text-teal-500 hover:text-white  transition duration-300',
+    'font-pop border border-teal-500 hover:bg-teal-600 text-teal-500 hover:text-white  transition duration-300',
 };
 
 const roundedClasses = {
