@@ -9,7 +9,7 @@ interface AuthRequest extends Request {
   };
 }
 
-export const getUser = async (req: Request, res: Response) => {
+export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await UserModel.findById(req.params.id).select('-password');
     if (!user) {
@@ -24,7 +24,10 @@ export const getUser = async (req: Request, res: Response) => {
   }
 };
 
-export const updateUser = async (req: Request, res: Response) => {
+export const updateUser = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   try {
     const authReq = req as AuthRequest;
 
@@ -62,7 +65,10 @@ export const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   try {
     const authReq = req as AuthRequest;
     const { id } = req.params;
