@@ -6,10 +6,12 @@ import { authRouter } from './routes/auth.routes';
 import { blogPostRouter } from './routes/blogPost.route';
 import cors from 'cors';
 import { DB_URL, FRONTEND_URL, PORT } from './config/config';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
