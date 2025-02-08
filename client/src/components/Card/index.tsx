@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, icon, description, children }) => {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+    <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition duration-300">
       <h3 className="text-xl font-semibold text-teal-600 mb-2">
         {icon} {title}
       </h3>

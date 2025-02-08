@@ -4,6 +4,7 @@ import RootStructure from './styles/template/RootStructure';
 import Register from './pages/register';
 import Login from './pages/login';
 import AboutPage from './pages/about';
+import BlogPage from './pages/blog';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
         </Routes>
       </RootStructure>
     </Router>

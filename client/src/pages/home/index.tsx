@@ -1,5 +1,5 @@
 import FaqSection from '../../components/Faqs';
-import HomeHeroSection from '../../components/home-hero-section';
+import HomeHeroSection from '../../components/Home-hero-section';
 import PageLoadingAnimation from '../../styles/animation';
 
 const HomePage = () => {
