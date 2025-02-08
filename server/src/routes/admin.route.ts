@@ -8,8 +8,9 @@ import { verifyAdmin, verifyToken } from '../middlewares/auth.middleware';
 
 const adminRouter = Router();
 
-adminRouter.get('/users', verifyToken, verifyAdmin, getAllUsers);
-adminRouter.get('/dashboard', verifyToken, verifyAdmin, getDashboardStats);
-adminRouter.delete('/users/:id', verifyToken, verifyAdmin, deleteUser);
+adminRouter.use(verifyToken, verifyAdmin);
+adminRouter.get('/users', getAllUsers);
+adminRouter.get('/dashboard', getDashboardStats);
+adminRouter.delete('/users/:id', deleteUser);
 
 export { adminRouter };

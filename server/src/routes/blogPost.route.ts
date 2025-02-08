@@ -8,15 +8,18 @@ import {
   searchPosts,
   updatePost,
 } from '../controllers/blogPost.controller';
+import { verifyToken } from '../middlewares/auth.middleware';
 
-const blogPostRouter = Router();
+const blogRouter = Router();
 
-blogPostRouter.get('/posts', getAllPosts);
-blogPostRouter.get('posts/:id', getPost);
-blogPostRouter.get('/posts/user/:userId', getPostsByUser);
-blogPostRouter.get('/posts/search', searchPosts);
-blogPostRouter.post('/post', createPost);
-blogPostRouter.put('/post/:id', updatePost);
-blogPostRouter.delete('/post/:id', deletePost);
+blogRouter.get('/', getAllPosts);
+blogRouter.get('/:id', getPost);
+blogRouter.get('/search', searchPosts);
 
-export { blogPostRouter };
+blogRouter.use(verifyToken);
+blogRouter.get('/my', getPostsByUser);
+blogRouter.post('/', createPost);
+blogRouter.put('/:id', updatePost);
+blogRouter.delete('/:id', deletePost);
+
+export { blogRouter };
