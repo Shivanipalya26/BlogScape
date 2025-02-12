@@ -26,7 +26,7 @@ const cardData = [
 
 const AboutHeroSection = () => {
   return (
-    <section className="h-full md:h-[100vh] bg-[#ede8e8]">
+    <section className="h-full md:h-[100vh] bg-[#eae3dd]">
       <Layout>
         <div className="text-gray-800 py-16 px-6 md:px-22 transition-colors duration-300">
           <T.H2 className="mb-6">About BlogScape</T.H2>
