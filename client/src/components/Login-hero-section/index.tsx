@@ -3,14 +3,33 @@ import { Form } from 'antd';
 import Layout from '../../styles/template/Layout';
 import { Button } from '../../styles/button';
 import { FormFieldInput, FormFieldPassword } from '../../styles/form';
+import axios from 'axios';
 
 type FieldType = {
   email?: string;
   password?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
   console.log('Success:', values);
+
+  try {
+    const response = await axios.post('http://localhost:3000/api/v1/auth/login', values, {
+      headers: { 'Content-Type': 'application/json'},
+      withCredentials: true,  
+    });
+
+    console.log("Login Successful ", response.data);
+    alert('Logged In')
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Axios Error:', error.response?.data || error.message);
+      alert(error.response?.data?.message || 'Registration failed!');
+    } else {
+      console.error('Unexpected Error:', error);
+      alert('An unexpected error occurred.');
+    }
+  }
 };
 
 const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {

@@ -4,11 +4,11 @@ import * as B from '../../styles/button';
 
 const HomeHeroSection = () => {
   return (
-    <section className="h-full md:h-[93vh] bg-[#ede8e8]">
+    <section className="h-full md:h-[93vh] bg-[#eae3dd]">
       <Layout>
         <div className="flex items-center justify-center h-full">
-          <div className=" flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex-1 flex flex-col gap-4 w-full">
+          <div className=" flex flex-col md:flex-row justify-between items-center w-full h-full overflow-hidden">
+            <div className="flex-1 flex flex-col gap-4 w-full ">
               <T.H2 className="text-4xl md:text-5xl font-bold text-gray-800 ">
                 Where
                 <span className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] ">
@@ -17,10 +17,10 @@ const HomeHeroSection = () => {
                 </span>
                 Meets Insight – Your Ultimate Knowledge Hub
               </T.H2>
-              <T.P>
+              <T.P className='tracking-wider text-slate-600'>
                 Stay informed and inspired with articles that cater to your
                 curiosity. Explore everything from industry trends to personal
-                growth, all written with you in mind. Our content is designed to
+                growth. Our content is designed to
                 be informative and actionable.
               </T.P>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
@@ -35,7 +35,7 @@ const HomeHeroSection = () => {
               </div>
             </div>
 
-            <div className="overflow-hidden flex flex-1 justify-center">
+            <div className=" flex flex-1 justify-center h-full">
               <img
                 src={'/images/blogImg.jpg'}
                 alt="computer"

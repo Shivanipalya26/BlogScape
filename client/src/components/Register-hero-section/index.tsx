@@ -3,14 +3,35 @@ import { Form } from 'antd';
 import Layout from '../../styles/template/Layout';
 import { Button } from '../../styles/button';
 import { FormFieldInput, FormFieldPassword } from '../../styles/form';
+import axios from 'axios';
 
 type FieldType = {
   email?: string;
   password?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
   console.log('Success:', values);
+
+  try {
+    const response = await axios.post(
+      'http://localhost:3000/api/v1/auth/register',
+      values,
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+    console.log('Response:', response.data);
+    alert('Registration successful!');
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Axios Error:', error.response?.data || error.message);
+      alert(error.response?.data?.message || 'Registration failed!');
+    } else {
+      console.error('Unexpected Error:', error);
+      alert('An unexpected error occurred.');
+    }
+  }
 };
 
 const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
@@ -111,7 +132,7 @@ const RegisterHeroSection = () => {
                 <FormFieldPassword placeholder="confirm password" />
               </Form.Item>
               <Form.Item>
-                <Button htmlFor="submit">Log in</Button>
+                <Button htmlFor="submit">Register</Button>
               </Form.Item>
             </Form>
           </div>

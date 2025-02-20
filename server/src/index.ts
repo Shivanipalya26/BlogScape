@@ -3,13 +3,15 @@ import { adminRouter } from './routes/admin.route';
 import { userRouter } from './routes/user.route';
 import mongoose from 'mongoose';
 import { authRouter } from './routes/auth.routes';
-import { blogPostRouter } from './routes/blogPost.route';
+import { blogRouter } from './routes/blogPost.route';
 import cors from 'cors';
 import { DB_URL, FRONTEND_URL, PORT } from './config/config';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
@@ -29,7 +31,7 @@ if (!DB_URI) {
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/admin', adminRouter);
-app.use('/api/v1/blog', blogPostRouter);
+app.use('/api/v1/blog', blogRouter);
 
 //DB Connection
 
