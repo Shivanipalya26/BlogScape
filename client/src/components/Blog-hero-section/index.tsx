@@ -57,8 +57,8 @@ const BlogHeroSection = () => {
         const response = await axios.get('http://localhost:3000/api/v1/blog/');
         console.log('API Response:', response.data);
 
-        if (Array.isArray(response.data.blogPosts)) {
-          setBlogs([...mockBlogs, ...response.data.blogPosts]);
+        if (Array.isArray(response.data.posts)) {
+          setBlogs([...mockBlogs, ...response.data.posts]);
         } else {
           console.error('Unexpected API response format', response.data);
           setBlogs(mockBlogs);

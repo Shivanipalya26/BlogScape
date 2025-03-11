@@ -24,7 +24,7 @@ const variantClasses = {
   primary:
     'font-pop bg-teal-500 hover:bg-teal-600 text-white transition duration-300',
   secondary:
-    'font-pop border border-teal-500 hover:bg-teal-600 text-teal-500 hover:text-white  transition duration-300',
+    'font-pop border border-teal-500 hover:bg-teal-600 text-teal-500 hover:text-white transition duration-300',
 };
 
 const roundedClasses = {
@@ -78,7 +78,7 @@ export const LinkButton: FC<LinkButtonProps> = ({
   ) : (
     <Link
       to={to}
-      className={`py-2 px-4 ${variantClasses[variant]} ${roundedClasses[rounded]}`}
+      className={`py-2 px-4 ${variantClasses[variant]} ${roundedClasses[rounded]} ${className}`}
       onClick={onClick}
       {...props}
     >

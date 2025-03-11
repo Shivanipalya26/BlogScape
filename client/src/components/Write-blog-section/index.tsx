@@ -4,6 +4,10 @@ import * as T from '../../styles/typography/index';
 import * as B from '../../styles/button/index';
 import Layout from '../../styles/template/Layout';
 import axios from 'axios';
+import {
+  blogPostFailedToast,
+  blogPostSuccessToast,
+} from '../../services/toast';
 
 const CreateBlogSection = () => {
   const [title, setTitle] = useState<string>('');
@@ -19,12 +23,13 @@ const CreateBlogSection = () => {
         { title, content, image },
         {
           headers: { 'Content-Type': 'application/json' },
-          withCredentials: true
-        }, 
+          withCredentials: true,
+        }
       );
-      alert('Blog posted successfully!');
+      blogPostSuccessToast();
     } catch (error) {
       console.error('Error posting blog:', error);
+      blogPostFailedToast();
     }
   };
 

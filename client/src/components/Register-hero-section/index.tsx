@@ -4,6 +4,10 @@ import Layout from '../../styles/template/Layout';
 import { Button } from '../../styles/button';
 import { FormFieldInput, FormFieldPassword } from '../../styles/form';
 import axios from 'axios';
+import {
+  registrationFailedToast,
+  registrationSuccessToast,
+} from '../../services/toast';
 
 type FieldType = {
   email?: string;
@@ -22,14 +26,14 @@ const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
       }
     );
     console.log('Response:', response.data);
-    alert('Registration successful!');
+    registrationSuccessToast();
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error('Axios Error:', error.response?.data || error.message);
-      alert(error.response?.data?.message || 'Registration failed!');
+      registrationFailedToast();
     } else {
       console.error('Unexpected Error:', error);
-      alert('An unexpected error occurred.');
+      registrationFailedToast();
     }
   }
 };
@@ -52,7 +56,7 @@ const RegisterHeroSection = () => {
                 <p className="">
                   Already have an account?{' '}
                   <a
-                    href="javascript:void(0)"
+                    href="/login"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                   >
                     Log in

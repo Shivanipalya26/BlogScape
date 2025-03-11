@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Layout from "../../styles/template/Layout";
-import * as T from "../../styles/typography/index";
-import * as B from '../../styles/button/index'
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Layout from '../../styles/template/Layout';
+import * as T from '../../styles/typography/index';
+import * as B from '../../styles/button/index';
 
 const navigationList = [
-  { title: "Home", path: "/" },
-  { title: "About", path: "/about" },
-  { title: "Blogs", path: "/blogs" },
-  { title: "Write Blog", path: "/write-blog" },
+  { title: 'Home', path: '/' },
+  { title: 'About', path: '/about' },
+  { title: 'Blogs', path: '/blogs' },
+  { title: 'Write Blog', path: '/write-blog' },
 ];
 
 const Footer = () => {
@@ -19,12 +19,12 @@ const Footer = () => {
       setIsVisible(window.scrollY > 200);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -33,7 +33,8 @@ const Footer = () => {
         <div className="relative">
           <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-0">
             {isVisible && (
-              <B.Button rounded="full" 
+              <B.Button
+                rounded="full"
                 onClick={scrollToTop}
                 aria-label="Back to top"
               >

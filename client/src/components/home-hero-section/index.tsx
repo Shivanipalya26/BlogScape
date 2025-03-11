@@ -1,6 +1,9 @@
 import Layout from '../../styles/template/Layout';
 import * as T from '../../styles/typography';
 import * as B from '../../styles/button';
+import { ArrowForwardIcon } from '../../styles/icons';
+import { moveForward } from '../../styles/animation/arrowMove';
+import { motion } from 'motion/react';
 
 const HomeHeroSection = () => {
   return (
@@ -17,20 +20,23 @@ const HomeHeroSection = () => {
                 </span>
                 Meets Insight – Your Ultimate Knowledge Hub
               </T.H2>
-              <T.P className='tracking-wider text-slate-600'>
+              <T.P className="tracking-wider text-slate-600">
                 Stay informed and inspired with articles that cater to your
                 curiosity. Explore everything from industry trends to personal
-                growth. Our content is designed to
-                be informative and actionable.
+                growth. Our content is designed to be informative and
+                actionable.
               </T.P>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
                 <B.Button>Start Exploring</B.Button>
                 <B.LinkButton
                   variant="secondary"
                   to="/about"
-                  className="text-teal-600 font-semibold hover:underline"
+                  className="text-teal-600 flex items-center gap-2 hover:underline"
                 >
-                  Learn More About Us
+                  <span>Learn More About Us</span>
+                  <motion.div {...moveForward}>
+                    <ArrowForwardIcon />
+                  </motion.div>
                 </B.LinkButton>
               </div>
             </div>

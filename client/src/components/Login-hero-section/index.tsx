@@ -4,39 +4,51 @@ import Layout from '../../styles/template/Layout';
 import { Button } from '../../styles/button';
 import { FormFieldInput, FormFieldPassword } from '../../styles/form';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { loginFailedToast, loginSuccessToast } from '../../services/toast';
+import { useAuth } from '../../context/AuthContext';
 
 type FieldType = {
   email?: string;
   password?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
-  console.log('Success:', values);
-
-  try {
-    const response = await axios.post('http://localhost:3000/api/v1/auth/login', values, {
-      headers: { 'Content-Type': 'application/json'},
-      withCredentials: true,  
-    });
-
-    console.log("Login Successful ", response.data);
-    alert('Logged In')
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('Axios Error:', error.response?.data || error.message);
-      alert(error.response?.data?.message || 'Registration failed!');
-    } else {
-      console.error('Unexpected Error:', error);
-      alert('An unexpected error occurred.');
-    }
-  }
-};
-
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
-
 const LoginHeroSection = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+    console.log('Success:', values);
+
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/api/v1/auth/login',
+        values,
+        {
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true,
+        }
+      );
+
+      login();
+      console.log('Login Successful ', response.data);
+      loginSuccessToast();
+
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
+    } catch (error) {
+      console.log(error);
+      loginFailedToast();
+    }
+  };
+
+  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
+    errorInfo
+  ) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
     <section className="h-full md:h-[100vh]">
       <Layout>
@@ -48,9 +60,9 @@ const LoginHeroSection = () => {
                   Log in to your account
                 </h3>
                 <p className="">
-                  Don't have an account?
+                  Don't have an account?{' '}
                   <a
-                    href="javascript:void(0)"
+                    href="/register"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                   >
                     Sign up

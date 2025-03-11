@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 import { LinkButton } from '../../styles/button';
 import * as T from '../../styles/typography';
 import { LogoIcon } from '../../styles/icons';
+import { useAuth } from '../../context/AuthContext';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isLoggedIn, logout } = useAuth();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   const navigationList = [
@@ -48,15 +54,25 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <LinkButton to="/login">Login</LinkButton>
-
-              <div className="hidden sm:flex">
-                <LinkButton to="/register" variant="secondary">
-                  Register
-                </LinkButton>
+            {!isLoggedIn ? (
+              <div className="sm:flex sm:gap-4">
+                <LinkButton to="/login">Login</LinkButton>
+                <div className="hidden sm:flex">
+                  <LinkButton to="/register" variant="secondary">
+                    Register
+                  </LinkButton>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="sm:flex sm:gap-4">
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
 
             <div className="block md:hidden">
               <button
@@ -95,6 +111,28 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+
+              {!isLoggedIn ? (
+                <>
+                  <li>
+                    <LinkButton to="/login">Login</LinkButton>
+                  </li>
+                  <li>
+                    <LinkButton to="/register" variant="secondary">
+                      Register
+                    </LinkButton>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="bg-red-500 text-white px-4 py-2 rounded-lg"
+                  >
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </nav>
         )}
