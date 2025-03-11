@@ -11,7 +11,7 @@ interface AuthRequest extends Request {
 
 export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const user = await UserModel.findById(req.params.id).select('-password');
+    const user = await UserModel.findById(req.user?.id).select('-password');
     if (!user) {
       res.status(404).json({ msg: 'User not found' });
       return;

@@ -8,8 +8,8 @@ import { verifyToken } from '../middlewares/auth.middleware';
 
 const userRouter = Router();
 
-userRouter.get('/:id', verifyToken, getUser);
-userRouter.put('/:id', verifyToken, updateUser);
-userRouter.delete('/:id', verifyToken, deleteUser);
+userRouter.get('/me', verifyToken, getUser);
+userRouter.put('/me', verifyToken, updateUser);
+userRouter.delete('/me', verifyToken, deleteUser);
 
 export { userRouter };

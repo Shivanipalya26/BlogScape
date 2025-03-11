@@ -24,7 +24,10 @@ export const getPost = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
 
-    const post = await BlogPostModel.findById(id).populate('author', 'name email');
+    const post = await BlogPostModel.findById(id).populate(
+      'author',
+      'name email',
+    );
 
     if (!post) {
       res.status(404).json({ msg: 'Post not found' });
